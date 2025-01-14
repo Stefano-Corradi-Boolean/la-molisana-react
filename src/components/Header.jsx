@@ -1,15 +1,21 @@
 import Logo from './partials/Logo'
 
-const Header = () => {
+
+const Header = (props) => {
+
+  const menuItems = props.menu;
+  const slogan = props.slogan
+
   return (
     <header>
-      <Logo />
+      <Logo slogan={slogan} />
       <nav>
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#" className="active">Prodotti</a></li>
-          <li><a href="#">Chi siamo</a></li>
-          <li><a href="#">Contatti</a></li>
+          {menuItems.map(item => (
+            <li key={item.id}>
+              <a href={item.url} className={item.isActive ? 'active' : ''}>{item.text}</a>
+            </li>
+          ))}
         </ul>
       </nav>
     </header>

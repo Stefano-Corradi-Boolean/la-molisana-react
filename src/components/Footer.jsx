@@ -1,6 +1,9 @@
 import Logo from './partials/Logo'
 
-const Footer = () => {
+const Footer = (props) => {
+
+  const { menus } = props;
+
   return (
     <footer className="container">
       <nav className="footer-nav">
@@ -11,11 +14,11 @@ const Footer = () => {
           <div>
             <h4>Pastificio</h4>
             <ul>
-              <li><a href="#">Il Pastificio</a></li>
-              <li><a href="#">Grano</a></li>
-              <li><a href="#">Filiera</a></li>
-              <li><a href="#">100 anni di pasta</a></li>
-              <li><a href="#">Sartoria della pasta</a></li>
+              {menus.menuPastificio.map(item => (
+                <li key={`pa-${item.id}`}>
+                  <a href={item.url}>{item.text}</a>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
@@ -23,11 +26,11 @@ const Footer = () => {
           <div>
             <h4>Prodotti</h4>
             <ul>
-              <li><a href="#">Le classiche</a></li>
-              <li><a href="#">Le Integrali</a></li>
-              <li><a href="#">Le Speciali</a></li>
-              <li><a href="#">Le Biologiche</a></li>
-              <li><a href="#">Le Gluten-free</a></li>
+              {menus.menuProdotti.map(item => (
+                <li key={`pr-${item.id}`}>
+                  <a href={item.url}>{item.text}</a>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
