@@ -28,25 +28,25 @@ a {
 
 /* Header */
 
-
 ul {
   display: flex;
   list-style: none;
   justify-content: center;
   margin: 30px;
-}
 
-ul li {
-  font-weight: bold;
-}
+  li {
+    font-weight: bold;
 
-ul li a {
-  padding: 10px;
-}
+    a {
+      padding: 10px;
 
-ul li a:hover,
-ul li a.active {
-  background: lightblue;
+      &:hover,
+      &.active {
+        background: lightblue;
+      }
+    }
+
+  }
 }
 
 /* Main */
@@ -69,52 +69,80 @@ main {
   flex-shrink: 0;
   display: flex;
   justify-content: center;
+
+  h4 {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.2em;
+    padding: 10px 0;
+  }
+
+  ul {
+    display: block;
+    margin: 0;
+
+    li a {
+      font-weight: normal;
+      padding: 0;
+      font-size: .9em;
+    }
+
+  }
+
 }
 
-.footer-col h4 {
-  text-transform: uppercase;
-  font-weight: 600;
-  font-size: 1.2em;
-  padding: 10px 0;
-}
-
-.footer-col ul {
-  display: block;
-  margin: 0;
-}
-
-.footer-col ul li a {
-  font-weight: normal;
-  padding: 0;
-  font-size: .9em;
-}
 
 .alert-container {
   margin: 15px auto;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  .alert {
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    border: 1px solid black;
+
+    ul {
+      display: block;
+    }
+
+    &.info {
+      background-color: lightblue;
+      color: blue;
+    }
+
+    &.success {
+      background-color: green;
+      color: white;
+    }
+
+    &.error {
+      background-color: red;
+      color: white;
+    }
+
+    &.error {
+      background-color: red;
+      color: white;
+    }
+
+  }
 }
 
-.alert {
-  padding: 10px;
-  color: white;
-  font-weight: bold;
-  border-radius: 10px;
-  border: 1px solid black;
-}
 
-.alert.info {
-  background-color: lightblue;
-  color: blue;
-}
+/* products */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 15px;
 
-.alert.success {
-  background-color: green;
-  color: white;
-}
-
-.alert.error {
-  background-color: red;
-  color: white;
+  .prod-card {
+    flex-basis: 25%;
+    border: 2px solid lightblue;
+    background-color: white;
+    padding: 20px;
+  }
 }

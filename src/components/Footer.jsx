@@ -1,4 +1,5 @@
 import Logo from './partials/Logo'
+import ListItem from './partials/ListItem';
 
 const Footer = (props) => {
 
@@ -15,9 +16,11 @@ const Footer = (props) => {
             <h4>Pastificio</h4>
             <ul>
               {menus.menuPastificio.map(item => (
-                <li key={`pa-${item.id}`}>
-                  <a href={item.url}>{item.text}</a>
-                </li>
+                <ListItem
+                  key={`pa-${item.id}`}
+                  text={item.text}
+                  url={item.url}
+                />
               ))}
             </ul>
           </div>
@@ -27,9 +30,11 @@ const Footer = (props) => {
             <h4>Prodotti</h4>
             <ul>
               {menus.menuProdotti.map(item => (
-                <li key={`pr-${item.id}`}>
-                  <a href={item.url}>{item.text}</a>
-                </li>
+                <ListItem
+                  key={`pr-${item.id}`}
+                  text={item.text}
+                  url={item.url}
+                />
               ))}
             </ul>
           </div>
